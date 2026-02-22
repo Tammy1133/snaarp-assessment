@@ -25,7 +25,7 @@ export const StatCard = ({
         <span className="text-[14px] font-medium">{title}</span>
       </div>
 
-      <div className="flex justify-between items-end mt-4">
+      <div className="flex justify-between gap-x-3 items-end mt-4">
         <div className="flex flex-col">
           <div className="flex items-center space-x-2">
             <h3 className="text-[28px] font-bold text-[#1A1D1F] tracking-tight">
@@ -43,7 +43,7 @@ export const StatCard = ({
           </p>
         </div>
 
-        <div className="w-24 h-14 overflow-visible">
+        <div className="w-24 sm:w-32 h-14 overflow-visible">
           <svg
             viewBox="0 0 100 40"
             preserveAspectRatio="none"

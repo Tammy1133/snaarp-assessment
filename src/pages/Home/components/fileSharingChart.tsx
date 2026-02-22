@@ -24,90 +24,117 @@ const data = [
   { month: "DEC", public: 45, link: 52, org: 40 },
 ];
 
-export const FileSharing = () => (
-  <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm h-full">
-    <div className="flex justify-between items-start mb-6">
-      <div className="flex items-center gap-2">
-        <FileText size={20} className="text-[#1A1D1F]" />
-        <h3 className="font-bold text-[16px] text-[#1A1D1F]">File Sharing</h3>
+const CustomTooltip = ({ active, payload, label } : { active?: boolean, payload?: any[], label?: string }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="relative mb-2">
+        <div className="bg-[#9A9FA5] text-white p-3 rounded-xl shadow-lg border-none text-[11px]">
+          <p className="uppercase opacity-70 mb-1">{label}</p>
+          <div className="flex items-center gap-2">
+            <div className="w-2.5 h-2.5 bg-[#2D5BFF] rounded-sm" />
+            <p className="font-bold">Public: {payload[0].value}</p>
+          </div>
+        </div>
+        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#9A9FA5] rotate-45" />
       </div>
-      <div className="flex gap-2">
-        <div className="flex bg-[#F8F9FB] p-1 rounded-lg">
-          <button className="bg-white p-1 rounded shadow-sm text-blue-600">
-            <BarChart2 size={16} />
+    );
+  }
+  return null;
+};
+
+export const FileSharing = () => (
+  <div className="bg-white p-8 rounded-[24px] border border-gray-100 shadow-sm font-sans">
+    <div className="flex justify-between items-start mb-10">
+      <div>
+        <div className="flex items-center gap-3 mb-1">
+          <div className="p-2 bg-gray-50 rounded-lg border border-gray-100">
+            <FileText size={20} className="text-gray-800" />
+          </div>
+          <h3 className="font-bold text-[18px] text-[#1A1D1F]">File Sharing</h3>
+        </div>
+        <p className="text-[13px] text-[#9A9FA5] ml-11">Keep track of files and how they're shared</p>
+      </div>
+      
+      <div className="flex gap-3">
+        <div className="flex bg-[#F4F4F4] p-1 rounded-xl">
+          <button className="bg-white p-2 rounded-lg shadow-sm text-[#2D5BFF]">
+            <BarChart2 size={18} />
           </button>
-          <button className="p-1 text-gray-400">
-            <LineChart size={16} />
+          <button className="p-2 text-[#9A9FA5] hover:text-gray-600">
+            <LineChart size={18} />
           </button>
         </div>
-        <button className="flex items-center gap-2 border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-medium text-gray-500">
-          Month <ChevronDown size={14} />
+        <button className="flex items-center gap-2 border border-gray-200 px-4 py-2 rounded-xl text-[13px] font-semibold text-[#1A1D1F] hover:bg-gray-50">
+          Month <ChevronDown size={16} className="text-[#9A9FA5]" />
         </button>
       </div>
     </div>
 
-    <div className="h-[280px] w-full">
+    <div className="h-[200px] w-full">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
-          margin={{ top: 10, right: 10, left: -25, bottom: 0 }}
+          barGap={-16} 
+          margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
         >
           <CartesianGrid
-            strokeDasharray="3 3"
+            strokeDasharray="4 4"
             vertical={false}
-            stroke="#F5F5F5"
+            stroke="#EFEFEF"
           />
           <XAxis
             dataKey="month"
             axisLine={false}
             tickLine={false}
-            tick={{ fontSize: 10, fill: "#9A9FA5" }}
+            tick={{ fontSize: 12, fill: "#9A9FA5", fontWeight: 500 }}
+            dy={10}
           />
           <YAxis
             axisLine={false}
             tickLine={false}
-            tick={{ fontSize: 10, fill: "#9A9FA5" }}
+            tick={{ fontSize: 12, fill: "#9A9FA5", fontWeight: 500 }}
+            domain={[0, 100]}
+            ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}
           />
-          <Tooltip
-            contentStyle={{
-              borderRadius: "12px",
-              border: "none",
-              boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
-            }}
+          <Tooltip 
+            content={<CustomTooltip />} 
+            cursor={{ fill: 'transparent' }} 
+            offset={-40}
+          />
+          
+          <Bar
+            dataKey="link"
+            fill="#2D5BFF"
+            radius={[8, 8, 8, 8]}
+            barSize={24}
           />
           <Bar
             dataKey="public"
-            fill="#2D5BFF"
-            radius={[4, 4, 0, 0]}
-            barSize={12}
-          />
-          <Bar
-            dataKey="link"
             fill="#4D7CFF"
-            radius={[4, 4, 0, 0]}
-            barSize={12}
+            radius={[8, 8, 8, 8]}
+            barSize={20}
           />
           <Bar
             dataKey="org"
             fill="#7A9CFF"
-            radius={[4, 4, 0, 0]}
-            barSize={12}
+            radius={[8, 8, 8, 8]}
+            barSize={16}
           />
         </BarChart>
       </ResponsiveContainer>
     </div>
 
-    <div className="flex justify-center gap-6 mt-6">
-      <LegendItem color="bg-[#2D5BFF]" label="Public" />
-      <LegendItem color="bg-[#4D7CFF]" label="Anyone with link" />
+    <div className="flex justify-center gap-10 mt-8">
+      <LegendItem color="bg-[#4D7CFF]" label="Public" />
+      <LegendItem color="bg-[#2D5BFF]" label="Anyone with link" />
       <LegendItem color="bg-[#7A9CFF]" label="Within Organisation" />
     </div>
   </div>
 );
 
-const LegendItem = ({ color, label }: { color: string; label: string }) => (
-  <div className="flex items-center gap-2">
-    <div className={`w-3 h-3 rounded-md ${color}`} />
-    <span className="text-[11px] font-medium text-[#6F767E]">{label}</span>
+const LegendItem = ({ color, label } : {color:string, label:string}) => (
+  <div className="flex items-center gap-3">
+    <div className={`w-4 h-4 rounded-[4px] ${color}`} />
+    <span className="text-[14px] font-semibold text-[#1A1D1F]">{label}</span>
   </div>
 );

@@ -25,7 +25,7 @@ export const ActiveUsers = () => (
     </div>
 
     <div className="flex flex-col xl:flex-row gap-8 flex-1">
-      <div className="flex-[1.4] bg-[#F8F9FB] rounded-2xl relative overflow-hidden min-h-[280px] border border-gray-50">
+      <div className="flex-1 bg-[#F8F9FB] rounded-2xl relative overflow-hidden min-h-[280px] border border-gray-50">
         <div
           className="absolute inset-0 opacity-30 bg-center bg-no-repeat bg-cover"
           style={{ backgroundImage: `url('${countryBg}')` }}
@@ -36,35 +36,39 @@ export const ActiveUsers = () => (
         <MapMarker top="68%" left="15%" color="bg-[#FF453A]" label="Samuel" />
       </div>
 
-      <div className="flex-1 flex flex-col justify-between py-2">
-        {countries.map((c) => (
-          <div key={c.name} className="group">
-            <div className="flex justify-between items-center mb-2.5">
-              <div className="flex items-center gap-3">
-                <span
-                  className={`fi fi-${c.code} rounded-sm shadow-sm w-6 h-4`}
-                />
-                <span className="text-[13px] font-semibold text-[#1A1D1F]">
-                  {c.name}
-                </span>
-              </div>
-              <span className="text-[12px] text-[#9A9FA5] font-bold">
+    <div className="flex-1 flex flex-col gap-4 py-2">
+      {countries.map((c) => (
+        <div 
+          key={c.name} 
+          className="group flex items-center gap-4 py-2 px-3 border border-[#EFEFEF] rounded-2xl shadow-sm"
+        >
+          <span
+            className={`fi fi-${c.code} rounded-sm shadow-sm w-6 h-6 flex-shrink-0`}
+          />
+
+          <div className="flex-1 flex flex-col gap-1">
+            <div className="flex justify-between items-center">
+              <span className="text-[10px] font-semibold text-[#6F767E]">
+                {c.name}
+              </span>
+              <span className="text-[9px] text-[#9A9FA5] font-medium">
                 {c.value}%
               </span>
             </div>
 
-            <div className="w-full bg-[#F4F4F4] h-1.5 rounded-full overflow-hidden">
+            <div className="w-full bg-[#F4F4F4] h-2 rounded-full overflow-hidden">
               <div
-                className="bg-[#30D158] h-full rounded-full transition-all duration-1000 ease-in-out"
+                className="bg-[#69C128] h-full rounded-full transition-all duration-1000 ease-in-out"
                 style={{ width: `${c.value}%` }}
               />
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
-  </div>
-);
+        </div>
+      </div>
+    );
 
 const MapMarker = ({ top, left, color, label }: any) => (
   <div
