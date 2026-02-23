@@ -11,13 +11,13 @@ const countries = [
 ];
 
 export const ActiveUsers = () => (
-  <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm h-full flex flex-col">
+  <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm h-full flex flex-col">
     <div className="flex justify-between items-center mb-8">
       <div className="flex items-center gap-2">
         <div className="p-1.5 bg-gray-50 rounded-lg">
           <User size={18} className="text-[#1A1D1F]" strokeWidth={2} />
         </div>
-        <h3 className="font-bold text-[16px] text-[#1A1D1F]">Active Users</h3>
+        <h3 className="font-bold text-base text-[#1A1D1F]">Active Users</h3>
       </div>
       <button className="flex items-center gap-2 border border-gray-200 px-3 py-1.5 rounded-lg text-xs font-semibold text-[#6F767E] hover:bg-gray-50 transition-all">
         Month <ChevronDown size={14} />

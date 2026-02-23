@@ -19,7 +19,7 @@ export const StatCard = ({
   const color = isUp ? "#30D158" : "#FF453A";
 
   return (
-    <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-between h-[160px]">
+    <div className="bg-white p-5 rounded-lg border border-gray-100 shadow-sm flex flex-col justify-between h-[160px]">
       <div className="flex items-center space-x-2 text-[#6F767E]">
         <Icon size={18} strokeWidth={1.5} />
         <span className="text-[14px] font-medium">{title}</span>

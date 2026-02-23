@@ -162,16 +162,16 @@ interface Props {
 
 export const OnlineUsers: React.FC<Props> = ({ data = MOCK_ONLINE_USERS }) => {
   return (
-    <div className="w-full bg-white rounded-[1.5rem] p-4 shadow-sm border border-gray-100 font-sans">
+    <div className="w-full bg-white rounded-lg p-4 shadow-sm border border-gray-100 font-sans">
       <div className="flex justify-between items-start mb-6">
         <div>
           <div className="flex items-center gap-3 text-gray-900 mb-1">
             <div className="p-2 bg-gray-50 rounded-xl border border-gray-100">
               <User size={22} strokeWidth={2.5} />
             </div>
-            <h2 className="text-xl font-black tracking-tight">Online Users</h2>
+            <h2 className="text-base font-black tracking-tight">Online Users</h2>
           </div>
-          <p className="text-sm text-gray-400 font-medium">View your comprehensive online users</p>
+          <p className="text-xs text-gray-400 font-medium">View your comprehensive online users</p>
         </div>
 
         <button className="flex items-center gap-6 px-5 py-2.5 border border-gray-100 rounded-2xl text-sm font-bold text-gray-500 hover:bg-gray-50 transition-all">

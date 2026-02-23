@@ -22,7 +22,7 @@ export const ProductivityStatCard = ({
   const brandColor = isUp ? "#30D158" : "#FF453A";
 
   return (
-    <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between min-w-[240px]">
+    <div className="bg-white p-5 rounded-lg border border-gray-100 shadow-sm flex flex-col justify-between min-w-[240px]">
       <div className="flex items-center gap-2 mb-6">
         <div className="p-1.5 bg-gray-50 rounded-lg border border-gray-100">
           <Icon size={18} className="text-gray-500" strokeWidth={1.5} />

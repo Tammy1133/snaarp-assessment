@@ -2,12 +2,12 @@ import { Zap, ChevronDown, LayoutPanelLeft } from 'lucide-react';
 
 export const ProductivityReportHeader = () => {
   return (
-    <div className="flex items-center justify-between w-full bg-white p-3 rounded-xl border border-gray-100 shadow-sm mt-2">
+    <div className="flex items-center justify-between w-full bg-white p-3 rounded-lg border border-gray-100 shadow-sm mb-2">
       <div className="flex items-center gap-3">
         <div className="flex items-center justify-center w-10 h-10 bg-gray-50 rounded-lg border border-gray-100">
           <LayoutPanelLeft size={20} className="text-gray-600" />
         </div>
-        <h2 className="text-[16px] font-bold text-[#1A1D1F]">
+        <h2 className="text-base font-bold text-[#1A1D1F]">
           Productivity Report
         </h2>
       </div>

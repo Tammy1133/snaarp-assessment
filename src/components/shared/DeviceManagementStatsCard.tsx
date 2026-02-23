@@ -1,4 +1,4 @@
-import { ArrowUpRight, ArrowDownRight, ArrowUp, ArrowDown } from "lucide-react";
+import { ArrowUp, ArrowDown } from "lucide-react";
 import type { StatCardProps } from "../../types/cardtype";
 
 export const DeviceManagementStatsCard = ({
@@ -14,7 +14,7 @@ export const DeviceManagementStatsCard = ({
   const gradientId = `grad-${title.replace(/\s+/g, "")}`;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#F4F4F4] shadow-sm flex flex-col h-full overflow-hidden font-sans">
+    <div className="bg-white rounded-lg border border-[#F4F4F4] shadow-sm flex flex-col h-full overflow-hidden font-sans">
       <div className="p-5 flex-1">
         <div className="flex items-center gap-2 text-[#6F767E] mb-4">
           <div className="p-1.5 bg-[#F4F4F4] rounded-lg">

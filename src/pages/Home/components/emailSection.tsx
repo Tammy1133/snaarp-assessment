@@ -1,4 +1,3 @@
-import React from 'react';
 import { 
   AreaChart, Area, XAxis, YAxis, CartesianGrid, 
   Tooltip, ResponsiveContainer, PieChart, Pie, Cell, 
@@ -18,6 +17,7 @@ const LINE_DATA = [
   { name: 'MAY', total: 400 }, { name: 'JUN', total: 1200 },
   { name: 'JUL', total: 5800 }, { name: 'AUG', total: 300 },
   { name: 'SEP', total: 7400 }, { name: 'OCT', total: 6500 },
+  { name: 'NOV', total: 400 }, { name: 'DEC', total: 6500 },
 ];
 
 interface CustomTooltipProps extends TooltipProps<number, string> {
@@ -57,15 +57,15 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
 
 export const EmailSection = () => {
   return (
-    <div className="flex flex-col xl:flex-row gap-2 my-2  bg-[#F9FAFB]  font-sans items-stretch">
+    <div className="flex flex-col xl:flex-row gap-2   bg-[#F9FAFB]  font-sans items-stretch">
       
       <div className="w-full xl:w-[400px] bg-white rounded-[0.5rem] pb-6 shadow-sm border border-gray-100 flex flex-col items-center">
         <div className="flex items-center gap-4 justify-start w-full  py-3 px-4">
           <div className="p-3 bg-gray-50 rounded-2xl"><Mail size={24} className="text-gray-800" /></div>
-          <span className="font-extrabold text-xl text-gray-900">Email Chart</span>
+          <span className="font-extrabold text-base text-gray-900">Email Chart</span>
         </div>
 
-        <div className="relative w-full h-[280px]">
+        <div className="relative w-full h-[250px]">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -103,7 +103,7 @@ export const EmailSection = () => {
           </div>
         </div>
 
-        <div className="flex gap-6 mt-14">
+        <div className="flex gap-6 mt-3">
           {PIE_DATA.map((item) => (
             <div key={item.name} className="flex items-center gap-2.5">
               <div className="w-4 h-4 rounded-md" style={{ backgroundColor: item.color }} />
@@ -112,7 +112,7 @@ export const EmailSection = () => {
           ))}
         </div>
 
-        <div className=" text-center !mt-8">
+        <div className=" text-center !mt-2">
           <p className="text-[16px] font-bold text-gray-900  uppercase">Total Emails Sent</p>
           <p className="text-[16px] font-black text-gray-900">5,421</p>
         </div>
@@ -122,7 +122,7 @@ export const EmailSection = () => {
         <div className="flex justify-between items-center mb-16 ">
           <div className="flex items-center gap-4 text-gray-900">
             <div className="p-3 bg-gray-50 rounded-2xl"><Mail size={24} /></div>
-            <span className="font-extrabold text-xl">Total Email</span>
+            <span className="font-extrabold text-base">Total Email</span>
           </div>
           
           <div className="flex items-center gap-4">
@@ -141,7 +141,7 @@ export const EmailSection = () => {
           </div>
         </div>
 
-        <div className="h-[450px] w-full">
+        <div className="h-[300px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart 
               data={LINE_DATA} 

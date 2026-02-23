@@ -54,14 +54,14 @@ const reportStyles: TableStyles = {
 
 export const ActivityReports = () => {
   return (
-    <div className="flex flex-col xl:flex-row gap-2 py-2 bg-[#F9FAFB] font-sans">
+    <div className="flex flex-col xl:flex-row gap-2 bg-[#F9FAFB] font-sans ">
       
-      <div className="flex-[1.5] bg-white rounded-[0.4rem] p-5 shadow-sm border border-gray-100">
+      <div className="flex-[1.5] bg-white rounded-[0.5rem] p-5 shadow-sm border border-gray-100">
         <div className="flex justify-between items-start mb-8">
           <div>
             <div className="flex items-center gap-3 mb-1">
               <div className="p-2 bg-gray-50 rounded-lg border border-gray-100"><Chrome size={20}/></div>
-              <h2 className="text-lg font-black text-gray-900">App Activity Report</h2>
+              <h2 className="text-base font-black text-gray-900">App Activity Report</h2>
             </div>
             <p className="text-xs text-gray-400 font-medium">View your comprehensive organizational app report</p>
           </div>
@@ -89,12 +89,12 @@ export const ActivityReports = () => {
         />
       </div>
 
-      <div className="flex-1 bg-white rounded-[0.4rem] p-5 shadow-sm border border-gray-100">
+      <div className="flex-1 bg-white rounded-[0.5rem] p-5 shadow-sm border border-gray-100">
         <div className="flex justify-between items-start mb-8">
           <div>
             <div className="flex items-center gap-3 mb-1">
               <div className="p-2 bg-gray-50 rounded-lg border border-gray-100"><Globe size={20}/></div>
-              <h2 className="text-lg font-black text-gray-900">Web Activity</h2>
+              <h2 className="text-base font-black text-gray-900">Web Activity</h2>
             </div>
             <p className="text-xs text-gray-400 font-medium">View your comprehensive organizational web report</p>
           </div>

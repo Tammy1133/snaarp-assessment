@@ -32,7 +32,7 @@ const Sidebar = () => {
   return (
     <aside className="w-64 bg-white border-r border-gray-100 flex flex-col h-full">
       <div className="p-6">
-        <h1 className="text-2xl font-bold text-[#1A1D1F]">Snaarp</h1>
+        <h1 className="text-3xl text-center font-bold text-[#1A1D1F]">Snaarp</h1>
       </div>
 
       <nav className="flex-1 px-4 space-y-1">

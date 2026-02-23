@@ -1,6 +1,6 @@
-import React from "react";
 import { Clock, Calendar, Users, Globe } from "lucide-react";
 import { ProductivityStatCard } from "../../../components/shared/ProductivityStatCard";
+import { ProductivityReportHeader } from "./productivityReportHeader";
 
 export const ProductivityDashboard = () => {
   const stats = [
@@ -39,7 +39,9 @@ export const ProductivityDashboard = () => {
   ];
 
   return (
-    <div className="w-full bg-[#F8F9FB] mt-2">
+    <>
+    <ProductivityReportHeader></ProductivityReportHeader>
+      <div className="w-full bg-[#F8F9FB] ">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
         {stats.map((stat, index) => (
           <ProductivityStatCard
@@ -53,6 +55,7 @@ export const ProductivityDashboard = () => {
           />
         ))}
       </div>
-    </div>
+    </div></>
+  
   );
 };

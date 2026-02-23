@@ -1,16 +1,19 @@
 import { 
   Monitor, Users, Mail, AppWindow, Download, 
-  Zap, Unplug, Power, MoveUpRight, MoveDownLeft,
+ Power, MoveUpRight, MoveDownLeft,
   Building2, Users2, UserSquare2, MailOpen,
   LucideZap,
   PlugZap2
 } from "lucide-react";
 import { FaWindows, FaApple, FaLinux } from "react-icons/fa";
 import { DeviceManagementStatsCard } from "../../../components/shared/DeviceManagementStatsCard";
+import DeviceManagementHeader from "./deviceManagementHeader";
 
 export const DeviceManagementGrid = () => {
   return (
-    <div className="mb-2 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 bg-[#F9F9F9]">
+  <>
+    <DeviceManagementHeader></DeviceManagementHeader>
+    <div className=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 bg-[#F9F9F9]">
       <DeviceManagementStatsCard 
         title="Number Of Devices" value="3,836" trend="15%" isUp={true} Icon={Monitor}
         subStats={[
@@ -58,5 +61,6 @@ export const DeviceManagementGrid = () => {
         />
       </div>
     </div>
+    </>
   );
 };

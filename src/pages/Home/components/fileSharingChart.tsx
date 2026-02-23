@@ -43,14 +43,14 @@ const CustomTooltip = ({ active, payload, label } : { active?: boolean, payload?
 };
 
 export const FileSharing = () => (
-  <div className="bg-white p-8 rounded-[24px] border border-gray-100 shadow-sm font-sans">
+  <div className="bg-white p-8 rounded-lg border border-gray-100 shadow-sm font-sans">
     <div className="flex justify-between items-start mb-10">
       <div>
         <div className="flex items-center gap-3 mb-1">
           <div className="p-2 bg-gray-50 rounded-lg border border-gray-100">
             <FileText size={20} className="text-gray-800" />
           </div>
-          <h3 className="font-bold text-[18px] text-[#1A1D1F]">File Sharing</h3>
+          <h3 className="font-bold text-base text-[#1A1D1F]">File Sharing</h3>
         </div>
         <p className="text-[13px] text-[#9A9FA5] ml-11">Keep track of files and how they're shared</p>
       </div>
